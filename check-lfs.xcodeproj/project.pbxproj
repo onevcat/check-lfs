@@ -3,11 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1B801C224D8E778001F7EBE /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = D1B801C124D8E778001F7EBE /* Rainbow */; };
 		D1E02F5D24D8010B0062EB87 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E02F5C24D8010B0062EB87 /* main.swift */; };
+		D1E02F6524D801610062EB87 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = D1E02F6424D801610062EB87 /* ArgumentParser */; };
+		D1E02F6724D802590062EB87 /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E02F6624D802590062EB87 /* Git.swift */; };
+		D1E02F6A24D802C90062EB87 /* SwiftExec in Frameworks */ = {isa = PBXBuildFile; productRef = D1E02F6924D802C90062EB87 /* SwiftExec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,7 @@
 /* Begin PBXFileReference section */
 		D1E02F5924D8010B0062EB87 /* check-lfs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "check-lfs"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E02F5C24D8010B0062EB87 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D1E02F6624D802590062EB87 /* Git.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B801C224D8E778001F7EBE /* Rainbow in Frameworks */,
+				D1E02F6524D801610062EB87 /* ArgumentParser in Frameworks */,
+				D1E02F6A24D802C90062EB87 /* SwiftExec in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				D1E02F5C24D8010B0062EB87 /* main.swift */,
+				D1E02F6624D802590062EB87 /* Git.swift */,
 			);
 			path = "check-lfs";
 			sourceTree = "<group>";
@@ -78,6 +87,11 @@
 			dependencies = (
 			);
 			name = "check-lfs";
+			packageProductDependencies = (
+				D1E02F6424D801610062EB87 /* ArgumentParser */,
+				D1E02F6924D802C90062EB87 /* SwiftExec */,
+				D1B801C124D8E778001F7EBE /* Rainbow */,
+			);
 			productName = "check-lfs";
 			productReference = D1E02F5924D8010B0062EB87 /* check-lfs */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +120,11 @@
 				Base,
 			);
 			mainGroup = D1E02F5024D8010B0062EB87;
+			packageReferences = (
+				D1E02F6324D801610062EB87 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				D1E02F6824D802C90062EB87 /* XCRemoteSwiftPackageReference "swift-exec" */,
+				D1B801C024D8E778001F7EBE /* XCRemoteSwiftPackageReference "Rainbow" */,
+			);
 			productRefGroup = D1E02F5A24D8010B0062EB87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E02F6724D802590062EB87 /* Git.swift in Sources */,
 				D1E02F5D24D8010B0062EB87 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +300,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D1B801C024D8E778001F7EBE /* XCRemoteSwiftPackageReference "Rainbow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Rainbow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.5;
+			};
+		};
+		D1E02F6324D801610062EB87 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+		D1E02F6824D802C90062EB87 /* XCRemoteSwiftPackageReference "swift-exec" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/samuelmeuli/swift-exec";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D1B801C124D8E778001F7EBE /* Rainbow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1B801C024D8E778001F7EBE /* XCRemoteSwiftPackageReference "Rainbow" */;
+			productName = Rainbow;
+		};
+		D1E02F6424D801610062EB87 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1E02F6324D801610062EB87 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		D1E02F6924D802C90062EB87 /* SwiftExec */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1E02F6824D802C90062EB87 /* XCRemoteSwiftPackageReference "swift-exec" */;
+			productName = SwiftExec;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D1E02F5124D8010B0062EB87 /* Project object */;
 }
