@@ -30,10 +30,12 @@ OPTIONS:
 
 ## Recommended Usage
 
-Put it to a `pre-push` hook, so before these changes are pushed to remote, you can have a notification to let you know 
-something goes wrong.
+### Git Hooks
 
-Add this to the beginning of your `.git/pre-push` hook:
+Put it to a `post-commit` or `pre-push` hook, so before these changes can be committed or pushed to remote, you can 
+have a notification to let you know something goes wrong.
+
+Add this to the beginning of your `.git/post-commit` or `.git/pre-push` hook:
 
 ```
 CHECK_LFS_PATH=./script/check-lfs
@@ -41,3 +43,8 @@ $CHECK_LFS_PATH || { echo >&2 "\n Binary files are detected in HEAD commits comp
 ```
 
 > Remember to change the `CHECK_LFS_PATH` to the real path of `check-lfs`.
+
+### Other
+
+You can also use `check-lfs` in a CI script or any good time you think. It is just a normal command-line tool. If any 
+binary files are detected in the commit, it will print these files and give a non-zero exit code.
