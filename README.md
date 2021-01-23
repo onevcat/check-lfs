@@ -15,7 +15,6 @@ Clone and run `./script/build.sh` to build the project. Find the `check-lfs` und
 ## Usage
 
 Just run `check-lfs` inside your repo's folder (under git). It compares a branch (usually the branch you are working on) to a base branch (usually the `master` branch). 
-If there are any binary files committed, it gives an error.
 
 ```
 USAGE: check-lfs [<current-branch>] [<base-branch>]
@@ -26,6 +25,20 @@ ARGUMENTS:
 
 OPTIONS:
 -h, --help Show help information.
+```
+
+If there are any binary files committed, it gives an error. For example:
+
+```sh
+# You added some binary files in the `test` branch. Running check-lfs will compare it to the `master` branch:
+-> [repo git:(test)] check-lfs
+Found binary files in the branch/commits:
+binary-file
+sample.png
+
+# With an error exit for the command
+-> [repo git:(test)] echo $?
+127 
 ```
 
 ## Recommended Usage
