@@ -30,7 +30,8 @@ OPTIONS:
 If there are any binary files committed, it gives an error. For example:
 
 ```sh
-# You added some binary files in the `test` branch. Running check-lfs will compare it to the `master` branch:
+# Say, you added some binary files in the `test` branch. 
+# Running check-lfs will compare it to `master`:
 -> [repo git:(test)] check-lfs
 Found binary files in the branch/commits:
 binary-file
