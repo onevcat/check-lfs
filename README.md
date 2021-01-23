@@ -1,31 +1,31 @@
 # Check LFS
 
-A command-line tool to check binary file committed to a repo.
+A command-line tool to check binary files committed to a repo. It is useful for avoiding unexpected binary files in an LFS-enabled git repo.
 
 ## Installation
 
 ### Released Version
 
-Find `check-lfs` in the release page, copy it to your repo.
+Find `check-lfs` on the release page, copy it to your executables path (such as `/usr/local/bin`).
 
 ### Manually Build
 
-Run `./script/build.sh` to build the project. Find the `check-lfs` under the `build` folder. Copy `check-lfs` to your project.
+Clone and run `./script/build.sh` to build the project. Find the `check-lfs` under the `build` folder. Copy `check-lfs` to your executables path.
 
 ## Usage
 
-Just run `check-lfs` in your repo. It compares a branch (usually the branch you are working on) to a base branch (usually the `master` branch). 
+Just run `check-lfs` inside your repo's folder (under git). It compares a branch (usually the branch you are working on) to a base branch (usually the `master` branch). 
 If there are any binary files committed, it gives an error.
 
 ```
 USAGE: check-lfs [<current-branch>] [<base-branch>]
 
 ARGUMENTS:
-  <current-branch>        The branch to check. (default: HEAD)
-  <base-branch>           The base branch name. (default: master)
+<current-branch> The branch to check. (default: HEAD)
+<base-branch> The base branch name. (default: master)
 
 OPTIONS:
-  -h, --help              Show help information.
+-h, --help Show help information.
 ```
 
 ## Recommended Usage
